@@ -1,0 +1,70 @@
+.carga-clapp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9fff5;
+}
+
+.svg-container {
+  width: 200px;
+  height: 200px;
+}
+
+.mano-bordes {
+  stroke: #3b82f6; 
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 1000; 
+  stroke-dashoffset: 1000; 
+  animation: draw 3s ease-in-out infinite; 
+}
+
+.mano-relleno {
+  fill: url(#locolore); 
+  clip-path: inset(50% 50% 50% 50%); 
+  animation: fill 1.5s linear infinite, fadeOpacity 1.5s ease-out infinite;
+}
+
+
+@keyframes fill {
+  0% {
+    clip-path: inset(50% 50% 50% 50%); 
+  }
+  25% {
+    clip-path: inset(0% 50% 50% 0%);
+  }
+  50% {
+    clip-path: inset(0% 0% 50% 0%);
+  }
+  75% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%); 
+  }
+}
+
+@keyframes fadeOpacity {
+  0% {
+    opacity: 1; 
+  }
+  50% {
+    opacity: 1; 
+  }
+  90% {
+    opacity: 0.6; 
+  }
+  100% {
+    opacity: 0; 
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1000; 
+  }
+  100% {
+    stroke-dashoffset: 0; 
+  }
+}
